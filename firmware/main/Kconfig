@@ -1,0 +1,15 @@
+# Main application Kconfig file
+
+menu "Application configuration"
+
+	config BUILD_ICAM_MINI
+		bool "Build for iCamMini"
+		help
+			Set this option to build for iCamMini, otherwise build for iCam
+	
+	config SCREENDUMP_ENABLE
+		bool "Enable screendump functionality"
+		help
+			Set this option to enable dumping the raw screen info when power button pressed
+			
+endmenu

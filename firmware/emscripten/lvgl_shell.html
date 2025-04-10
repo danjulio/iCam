@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'/>
+		<style type="text/css">
+			html, body {
+			  margin: 0;
+
+			  width: 100%;
+			  height: 100%;
+			  min-width: 100%;
+			  min-height: 100%;
+			}
+
+			body {
+			  display: flex;
+			  flex-direction: column;
+			  align-items: start;
+			  justify-content: start;
+			  background-color: rgb(0, 0, 0);
+			}
+		</style>
+	</head>
+	<body>
+		<p id="output">
+			<canvas id="canvas"></canvas>
+		</p>
+		<script>
+			var siteURL = new URL(window.location.href);
+			var w = window.innerWidth;
+			var h = window.innerHeight;
+			var canvas = document.getElementById('canvas');
+			canvas.style.position = "absolute";
+			canvas.style.top = "0";
+			canvas.style.left = "0";
+			console.log("siteURL: " + siteURL + "  (" + w + ", " + h + ")");
+			var Module = {
+				print: function(text) {
+					console.log(text);
+				},
+				printErr: function(text) {
+					console.error(text);
+				},
+				canvas: (function() {
+					return canvas;
+				})()
+			};
+            window.addEventListener("click", () => window.focus());
+            window.addEventListener('beforeunload', function (e) {
+				// Call the Emscripten function to handle the refresh
+ 				Module._handleBrowserRefresh();
+
+				// (e.preventDefault() and e.returnValue are required for some browsers)
+				e.preventDefault();
+				e.returnValue = '';
+			});
+			window.addEventListener('resize', function(e) {
+				// Call the Emscripten function to handle the resize
+				Module._handleBrowserResize();
+				
+				// (e.preventDefault() and e.returnValue are required for some browsers)
+				e.preventDefault();
+				e.returnValue = '';
+			});
+		</script>
+		{{{ SCRIPT }}}
+	</body>
+</html>
