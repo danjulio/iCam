@@ -2,7 +2,7 @@
 
 ![iCam and iCam Mini](pictures/two_cameras_phone.jpg)
 
-This repository contains the design files for my Infiray Tiny1C-based thermal imaging cameras.
+This repository contains the design files for my Infiray Tiny1C-based thermal imaging cameras.  It also contains the documentation I have for the Tiny1C module from Infiray.
 
 1. iCam - Handheld camera with local LCD touchscreen based on my ESP32 [gCore](https://github.com/danjulio/gCore) development board and the Tiny1C breakout board in this repository.
 2. iCamMini - Portable camera with either web-based access or NTSC/PAL video output based on the iCamCntrl board in this repository and the Tiny1C breakout board.
