@@ -3,7 +3,7 @@ The Tiny1C Breakout PCB is used by both iCam and iCamMini.  It provides access t
 
 The pinout basically follows the Flir Lepton breakout board sold by Group Gets.
 
-This directory contains the gerber files as well as schematic documentation.
+This directory contains the gerber files as well as schematic documentation and a centroid file.  Parts can be found at my [Mouser shared BOM](https://www.mouser.com/Tools/Project/Share?AccessID=772c639990).
 
 
 ![Top Render](pictures/tiny1c_breakout_r3_top.jpg)
